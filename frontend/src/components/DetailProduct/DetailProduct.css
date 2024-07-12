@@ -1,0 +1,394 @@
+.detail-product{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.detail-product-right{
+    width: 100%;
+}
+
+.product-name{
+    font-size: 40px;
+    font-weight: 600;
+    font-family: "Anton SC", sans-serif;
+    margin-top: 28px;
+    margin-left: 10px;
+}
+
+.product-description{
+    margin-top: 26px;
+    margin-bottom: 26px;
+    margin: 26px 0 26px 10px;
+    font-size: 22px;
+    color: #979595;
+    font-weight: 600;
+    line-height: 1.4;
+    min-height: 70px;
+    font-style: italic;
+}
+
+.line{
+    display: block;
+    margin-top: 12px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #49557e;
+}
+
+.product-price{
+    margin-left: 10px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price{
+    font-size: 38px;
+    color: #ff4c24;
+    font-weight: 600;
+}
+
+
+.buy{
+    display: flex;
+    align-items: center;
+    border: 3px solid #ff4c24;
+    border-radius: 50px;
+    min-width: 180px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.buy:hover{
+    background-color: #fff4fe;
+}
+
+.buy p{
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.buy-icon{
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+}
+
+.food-detail-counter{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50px;
+    min-width: 180px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.icon-action{
+    width: 32px;
+    height: 32px;
+}
+
+.food-detail-counter p{
+    color: black;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.detail-product-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-image{
+    display: block;
+    width: 100%;
+    height: 380px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 16px #b1b1b1;
+    overflow: hidden;
+}
+
+.detail-product-sub{
+    width: 100%;
+}
+
+.detail-product-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    font-size: 24px;
+    color: rgb(33, 31, 31);
+    font-weight: 600;
+    width: 100%;
+}
+
+.detail-product-amount, .detail-product-time{
+    font-size: 22px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.amount-icon, .time-icon{
+    margin-right: 8px;
+    width: 28px;
+}
+
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+.grid.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.row.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.row.no-gutters .col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.c-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+
+
+/* >= Tablet */
+@media (min-width: 949px) {
+    .row {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .m-4,
+    .m-7{
+        display: block;
+    }
+
+    .m-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+
+    .m-7 {
+        flex: 0 0 58.33333%;
+        max-width: 58.33333%;
+    }
+
+}
+
+/* PC medium resolution > */
+@media (min-width: 1113px) {
+    .row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .l-5,
+    .l-6 {
+        display: block;
+    }
+
+    .l-5 {
+        flex: 0 0 41.66667%;
+        max-width: 41.66667%;
+    }
+
+    .l-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Tablet - PC low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wide {
+        width: 644px;
+    }
+}
+
+@media (min-width: 1076px) and (max-width: 1299px) {
+    .product-image{
+        width: 100%;
+        height: 290px;
+        margin: auto;
+    }
+}
+
+/* MOBILE  & TABLET */
+@media (max-width: 1075px) {
+    .product-image{
+        width: 100%;
+        height: 290px;
+        margin: auto;
+    }
+
+    .price{
+        font-size: 30px;
+        color: #ff4c24;
+        font-weight: 600;
+    }
+
+    .buy p{
+        font-size: 22px;
+        font-weight: 600;
+        margin-left: 16px;
+    }
+
+    .buy-icon{
+        width: 22px;
+        height: 22px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .buy {
+        display: flex;
+        align-items: center;
+        border: 3px solid #ff4c24;
+        border-radius: 50px;
+        min-width: 120px;
+        height: 44px;
+        cursor: pointer;
+    }
+}
+
+/* Tablet */
+@media (max-width: 950px) and (max-width: 1076px){
+    .product-image{
+        width: 100%;
+        margin: auto;
+    }
+
+    .buy p{
+        font-size: 20px;
+        font-weight: 600;
+        margin-left: 20px;
+    }
+
+    .buy-icon{
+        width: 20px;
+        height: 20px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .buy {
+        display: flex;
+        align-items: center;
+        border: 3px solid #ff4c24;
+        border-radius: 50px;
+        min-width: 120px;
+        height: 44px;
+        cursor: pointer;
+    }
+
+    .price{
+        font-size: 28px;
+        color: #ff4c24;
+        font-weight: 600;
+    }
+}
+
+/* Mobile */
+@media (max-width: 949px){
+    .detail-product{
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    .product-image{
+        width: 100%;
+        height: 340px;
+        margin: auto;
+    }
+
+    .buy p{
+        font-size: 20px;
+        font-weight: 600;
+        margin-left: 20px;
+    }
+
+    .buy-icon{
+        width: 24px;
+        height: 24px;
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    .detail-product-amount, .detail-product-time{
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+    .buy {
+        display: flex;
+        align-items: center;
+        border: 3px solid #ff4c24;
+        border-radius: 50px;
+        min-width: 120px;
+        height: 44px;
+        cursor: pointer;
+    }
+
+    .price{
+        font-size: 24px;
+        color: #ff4c24;
+        font-weight: 600;
+    }
+
+   .product-price{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+   }
+
+   .product-buy{
+        margin-top: 16px;
+        margin-left: -4px;   
+   }
+
+   .food-detail-counter{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 50px;
+        min-width: 140px;
+        height: 50px;
+        cursor: pointer;
+        margin-left: -10px;
+    }
+}

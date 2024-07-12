@@ -1,0 +1,24 @@
+.breadCrums-list{
+    display: flex;
+    list-style-type: none;
+}
+
+.breadCrums-item{
+    margin-right: 4px;
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    color: #a2a2a2;
+    font-weight: 600;
+}
+
+.chercon-icon{
+    margin-right: 4px;
+}
+
+@media (max-width: 800px) {
+    .breadCrums-item{
+        font-size: 14px;
+        margin-right: 2px;
+    }
+}
