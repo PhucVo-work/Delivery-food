@@ -25,8 +25,6 @@ const Navbar = ({setShowLogin}) => {
         };
     }, []);
 
-    console.log(menu);
-
     return (
         <div className={`container ${hasShadow ? 'shadow' : ''}`}>
             <div className='navbar'>

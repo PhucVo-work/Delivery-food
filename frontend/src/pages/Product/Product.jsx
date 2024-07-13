@@ -10,7 +10,6 @@ const Product = () => {
     const { food_list, cartItems } = useContext(StoreContext)
     const { id } = useParams();
     const product = food_list.find((e) => e._id === id)
-    console.log(product);
   return (
     <div>
       <Breadcrums product={product} />
