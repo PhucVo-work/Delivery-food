@@ -31,8 +31,8 @@ const Cart = () => {
                     <img src={item.image} alt="" />
                     <p>{item.name}</p>
                     <p>{item.price}.000₫</p>
-                    <p>{cartItems[item._id]}</p>
-                    <p>{item.price*cartItems[item._id ]}.000₫</p>
+                    <p>{cartItems[item._id]}</p> 
+                    <p>{item.price*cartItems[item._id]}.000₫</p>
                     <img src={assets.cross_icon}  onClick={() => removeFromCart(item._id)} className='cross'/>
                   </div>
                   <hr />
