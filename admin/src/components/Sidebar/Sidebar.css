@@ -24,12 +24,26 @@
     padding: 8px 10px;
     border-radius: 3px 0px 0px 3px;
     cursor: pointer;
+    transition: 0.3s;
+    max-height: 48px;
 }
 
 .sidebar-option .icon{
     width: 24px;
     height: 24px;
 }
+
+.sidebar-option.active{
+    background-color: #d5806f;
+    border-color: tomato;
+}
+
+.sidebar-option:hover{
+    word-spacing: 1px;
+    transition: 0.3s;
+    background-color: #fff0ed;
+    margin-left: 8px;
+} 
 
 @media (max-width: 900px) {
     .sidebar-option p{
