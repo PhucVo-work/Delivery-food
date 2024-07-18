@@ -9,7 +9,7 @@
 
 .sidebar-options{
     padding-top: 30px;
-    padding-left: 20%;
+    padding-left: 10%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -19,13 +19,13 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    border: 1px solid #a9a9a9;
+    border: none;
     border-right: 0;
-    padding: 8px 10px;
-    border-radius: 3px 0px 0px 3px;
+    padding: 8px 14px;
+    border-radius: 12px 0px 0px 12px;
     cursor: pointer;
-    transition: 0.3s;
     max-height: 48px;
+    transition: 0.2s ease-in-out;
 }
 
 .sidebar-option .icon{
@@ -35,14 +35,14 @@
 
 .sidebar-option.active{
     background-color: #d5806f;
-    border-color: tomato;
+    border: none;
+    color: white;
+    transition: 0.2s ease-in-out;
 }
 
 .sidebar-option:hover{
-    word-spacing: 1px;
-    transition: 0.3s;
-    background-color: #fff0ed;
-    margin-left: 8px;
+    transition: 0.2s ease-in-out;
+    background-color: #f3dbd6;
 } 
 
 @media (max-width: 900px) {

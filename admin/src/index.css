@@ -28,3 +28,15 @@ hr{
 .app-content{
     display: flex;
 }
+
+.flex-row{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
