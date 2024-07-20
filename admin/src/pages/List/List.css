@@ -1,0 +1,45 @@
+.header-list {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.list-table-format {
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr 0.4fr 1fr 1fr 1fr 1.3fr;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #cacaca;
+  font-size: 13px;
+}
+
+.list-table-format .title {
+  background-color: #f9f9f9;
+}
+
+.list-table-format img {
+  width: 180px;
+  margin-left: 15px;
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 18px;
+  
+ 
+}
+
+.edit-icon {
+
+}
+
+@media (max-width: 600px) {
+  .list-table-format {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,268 @@
+.body {
+  height: 100vh;
+}
+
+.add {
+  width: 80%;
+  margin-left: max(5vw, 25px);
+  margin-top: 30px;
+  color: #6d6d6d;
+  font-size: 16px;
+}
+
+.add-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 10px;
+}
+
+.fx-24 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.add form {
+  gap: 20px;
+}
+
+.left-description {
+  width: 50%;
+}
+
+.add-content .add-image-upload {
+  width: 30%;
+  height: 500px;
+  margin-left: 12px;
+  margin-top: 14px;
+}
+
+.add-image-upload p {
+  font-size: 26px;
+  font-weight: 600;
+  word-spacing: 2px;
+}
+
+.add-content .add-image-upload .upload-area {
+  width: 100%;
+  max-height: 500px;
+  min-height: 324px;
+  display: block;
+  border: 3px dashed #6d6d6d;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-area > .icon-upload {
+  margin-bottom: 28px;
+  width: 80px;
+  height: 80px;
+  color: tomato;
+}
+
+.add-product-name,
+.add-product-description {
+  width: 100%;
+}
+
+.add-product-name input,
+.add-product-description textarea {
+  padding: 16px;
+  width: 80%;
+  font-size: 18px;
+}
+
+.left-description > .add-category-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 80%;
+  margin-top: 14px;
+}
+
+.add-category-info select,
+.add-category-info input {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.add-btn-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: self-end;
+}
+
+.add-btn {
+  max-width: 120px;
+  min-width: 120px;
+  max-height: 60px;
+  min-height: 60px;
+  border: none;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-top: 37px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  color: tomato;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.add-price input {
+  padding: 16px;
+}
+
+.add-price p {
+  margin-bottom: 10px;
+}
+
+.imgae-upload {
+  display: block;
+  width: 353px;
+  height: 326px;
+}
+
+@media (max-width: 1535px) {
+  .left-description {
+    width: 50%;
+  }
+
+  .add-image-upload p {
+    font-size: 22px;
+    font-weight: 600;
+    word-spacing: 2px;
+  }
+
+  .fx-24 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 1398px) {
+  .left-description {
+    width: 60%;
+  }
+
+  .fx-24 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 1266px) and (min-width: 1010px) {
+  .left-description {
+    width: 60%;
+  }
+
+  .add-image-upload p {
+    font-size: 18px;
+    font-weight: 600;
+    word-spacing: 2px;
+  }
+
+  .add-btn {
+    min-width: 90px;
+    min-height: 50px;
+    border: none;
+    padding: 8px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-top: 44px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  .add-btn:hover {
+    color: tomato;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .add-price input {
+    padding: 16px;
+    max-width: 100px;
+    max-height: 40px;
+  }
+
+  .fx-24 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 12px;
+  }
+
+  .add-category-info select,
+  .add-category-info input {
+    width: 100%;
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .add-content .add-image-upload .upload-area {
+    width: 100%;
+    max-height: 500px;
+    min-height: 300px;
+    display: block;
+    border: 3px dashed #6d6d6d;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1009px) {
+  .add-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .add-content .add-image-upload {
+    width: 90%;
+    height: 500px;
+    margin-left: 12px;
+    margin-top: 14px;
+  }
+
+  .left-description {
+    width: 100%;
+  }
+
+  .add-product-name input,
+  .add-product-description textarea {
+    padding: 16px;
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .left-description > .add-category-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 90%;
+    margin-top: 14px;
+  }
+
+  .add-price input {
+    padding: 16px;
+    width: 126px;
+  }
+}

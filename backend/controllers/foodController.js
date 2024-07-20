@@ -89,7 +89,6 @@ const updateFood = async (req, res) => {
       data: updatedFood,
     });
   } catch (error) {
-    console.log(error);
     res.json({ success: false, message: "Lỗi" });
   }
 };

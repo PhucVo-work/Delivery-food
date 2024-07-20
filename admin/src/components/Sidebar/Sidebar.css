@@ -1,52 +1,80 @@
-.sidebar{
-    width: 18%;
-    height: 100vh;
-    border: 1.5px solid #a9a9a9;
-    border-top: 0;
-    font-size: max(1vw, 18px);
-    font-weight: 500;
+.sidebar {
+  width: 18%;
+  height: 100vh;
+  border: 1.5px solid #a9a9a9;
+  border-top: 0;
+  font-size: max(1vw, 18px);
+  font-weight: 500;
+  border-bottom: none;
 }
 
-.sidebar-options{
+.sidebar-options {
+  padding-top: 30px;
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  border-right: 0;
+  padding: 8px 14px;
+  border-radius: 20px 0px 0px 20px;
+  cursor: pointer;
+  max-height: 48px;
+  transition: 0.2s ease-in-out;
+}
+
+.sidebar-option .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-option.active {
+  background-color: #d5806f;
+  border: none;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+.sidebar-option:hover {
+  transition: 0.2s ease-in-out;
+  background-color: #f3dbd6;
+}
+
+@media (max-width: 900px) {
+  .sidebar-option p {
+    display: none;
+  }
+}
+
+@media (max-width: 1223px) and (min-width: 901px) {
+  .sidebar-options {
     padding-top: 30px;
-    padding-left: 10%;
+    padding-left: 6%;
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
+  }
 
-.sidebar-option{
+  .sidebar-option p {
+    font-size: 16px;
+  }
+
+  .sidebar-option {
     display: flex;
     align-items: center;
     gap: 12px;
     border: none;
     border-right: 0;
-    padding: 8px 14px;
+    padding: 28px 14px;
     border-radius: 20px 0px 0px 20px;
     cursor: pointer;
     max-height: 48px;
     transition: 0.2s ease-in-out;
-}
-
-.sidebar-option .icon{
-    width: 24px;
-    height: 24px;
-}
-
-.sidebar-option.active{
-    background-color: #d5806f;
-    border: none;
-    color: white;
-    transition: 0.2s ease-in-out;
-}
-
-.sidebar-option:hover{
-    transition: 0.2s ease-in-out;
-    background-color: #f3dbd6;
-} 
-
-@media (max-width: 900px) {
-    .sidebar-option p{
-        display: none;
-    }
+  }
 }

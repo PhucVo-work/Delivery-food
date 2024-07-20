@@ -31,7 +31,7 @@ hr{
 
 .flex-row{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: start;
     gap: 10px;
 }
@@ -41,3 +41,4 @@ hr{
     flex-direction: column;
     gap: 10px;
 }
+
