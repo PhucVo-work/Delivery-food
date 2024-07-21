@@ -1,10 +1,12 @@
-import { React, useState} from "react";
+import { React, useState, useContext, useEffect } from "react";
 import { ImUpload2 } from "react-icons/im";
 import axios from "axios";
 import { toast } from "react-toastify";
-import './AddFood.css';
+import "./AddFood.css";
+import { StoreContext } from "../../context/StoreContext";
+import { IoArrowBackCircle } from "react-icons/io5";
 
-const AddFood = () => {
+const AddFood = ({ product }) => {
   const url = "http://localhost:4000";
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
@@ -16,10 +18,40 @@ const AddFood = () => {
     time: "5-10 phút",
   });
 
+  const { setIsUpdate, IsUpdate, backToList } = useContext(StoreContext);
+  useEffect(() => {
+    if (product) {
+      setData({
+        name: product.name || "",
+        description: product.description || "",
+        price: product.price || "",
+        category: product.category || "Salad",
+        amount: product.amount || "1-2 người",
+        time: product.time || "5-10 phút",
+      });
+      if (product.image) {
+        setImage(product.image);
+      }
+    }
+  }, [product]);
+
   const onChangHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
+  };
+
+  const resetForm = () => {
+    setData({
+      name: "",
+      description: "",
+      price: "",
+      category: "Salad",
+      amount: "1-2 người",
+      time: "5-10 phút",
+    });
+    setImage(false);
+    setIsUpdate(false);
   };
 
   const onSubmitHandler = async (event) => {
@@ -38,18 +70,31 @@ const AddFood = () => {
     formData.append("amount", data.amount);
     formData.append("time", data.time);
     formData.append("image", image);
-    const response = await axios.post(`${url}/api/food/add`, formData);
-    console.log("Response:", response.data); // Debug response data
+
+    // const response = await axios.post(`${url}/api/food/add`, formData);
+    // if (response.data.success) {
+    //   setData({
+    //     name: "",
+    //     description: "",
+    //     price: "",
+    //     category: "Salad",
+    //     amount: "1-2 người",
+    //     time: "5-10 phút",
+    //   });
+    //   setImage(false);
+    //   toast.success(response.data.message);
+    // } else {
+    //   toast.error(response.data.message);
+    // }
+    let response;
+    if (IsUpdate) {
+      response = await axios.put(`${url}/api/food/update/${product._id}`, formData);
+    } else {
+      response = await axios.post(`${url}/api/food/add`, formData);
+    }
+
     if (response.data.success) {
-      setData({
-        name: "",
-        description: "",
-        price: "",
-        category: "Salad",
-        amount: "1-2 người",
-        time: "5-10 phút",
-      });
-      setImage(false);
+      resetForm();
       toast.success(response.data.message);
     } else {
       toast.error(response.data.message);
@@ -58,6 +103,10 @@ const AddFood = () => {
 
   return (
     <div className="add">
+      <div className={IsUpdate ? "update" : "disabled"}>
+        <h2 className="update-header">Cập nhật món ăn</h2>
+        <IoArrowBackCircle onClick={backToList} className="icon-back" />
+      </div>
       <form className="add-content" onSubmit={onSubmitHandler}>
         <div className="left-description">
           <div className="add-product-name flex-col">
@@ -86,7 +135,7 @@ const AddFood = () => {
             <div className="add-category-amount">
               <div className="add-category flex-col">
                 <p className="fx-24">Khẩu phần</p>
-                <select onChange={onChangHandler} name="amount">
+                <select onChange={onChangHandler} name="amount" value={data.amount}>
                   <option value="1-2 người">1 - 2 người</option>
                   <option value="2-3 người">2- 3 người</option>
                 </select>
@@ -96,7 +145,7 @@ const AddFood = () => {
             <div className="add-category-time">
               <div className="add-category flex-col">
                 <p className="fx-24">Thời gian chế biến</p>
-                <select onChange={onChangHandler} name="time">
+                <select onChange={onChangHandler} name="time" value={data.time}>
                   <option value="5-10 phút">5-10 phút</option>
                   <option value="20-30 phút">20-30 phút</option>
                 </select>
@@ -105,7 +154,7 @@ const AddFood = () => {
 
             <div className="add-category flex-col">
               <p className="fx-24">Loại món ăn</p>
-              <select onChange={onChangHandler} name="category">
+              <select onChange={onChangHandler} name="category" value={data.category}>
                 <option value="Salad">Salad</option>
                 <option value="Cuốn">Cuốn</option>
                 <option value="Tráng miệng">Tráng miệng</option>
@@ -124,7 +173,12 @@ const AddFood = () => {
           <label htmlFor="image">
             {image ? (
               <img
-                src={URL.createObjectURL(image)}
+                // src={URL.createObjectURL(image)}
+                src={
+                  typeof image === "string"
+                    ? `${url}/images/${image}`
+                    : URL.createObjectURL(image)
+                }
                 alt=""
                 className="imgae-upload"
               />
@@ -139,8 +193,9 @@ const AddFood = () => {
             onChange={(e) => setImage(e.target.files[0])}
             type="file"
             id="image"
+            name="image"
             hidden
-            required
+            required={!IsUpdate}
           />
 
           <div className="add-btn-price">
@@ -156,7 +211,7 @@ const AddFood = () => {
               />
             </div>
             <button type="submit" className="add-btn">
-              Thêm món ăn
+              {IsUpdate ? "Sửa món ăn" : "Thêm món ăn"}
             </button>
           </div>
         </div>

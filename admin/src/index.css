@@ -42,3 +42,6 @@ hr{
     gap: 10px;
 }
 
+.disabled{
+    display: none;
+}

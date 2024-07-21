@@ -94,5 +94,3 @@ const updateFood = async (req, res) => {
 };
 
 export { addFood, listFood, removeFood, updateFood };
-
-// CÓ THỂ THÊM CÁC PHƯƠNG THỨC KHÁC NHƯ  UPDATE

@@ -10,6 +10,23 @@
   font-size: 16px;
 }
 
+.update{
+  width: 83%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.update .icon-back{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.update .icon-back:hover{
+  color: tomato;
+}
+
 .add-content {
   display: flex;
   flex-direction: row;
@@ -25,6 +42,12 @@
 
 .add form {
   gap: 20px;
+}
+
+.update-header{
+  font-size: 26px;
+  color: tomato ;
+  display: block;
 }
 
 .left-description {
@@ -230,6 +253,12 @@
 }
 
 @media (max-width: 1009px) {
+  .update-header{
+    font-size: 26px;
+    color: tomato;
+    margin-left: 12px;
+  }
+
   .add-content {
     display: flex;
     flex-direction: column-reverse;

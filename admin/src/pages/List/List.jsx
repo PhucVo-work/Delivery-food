@@ -1,9 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState,  useContext} from "react";
 import "./List.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { LiaUserEditSolid } from "react-icons/lia";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import {  useNavigate } from 'react-router-dom'
+import { StoreContext } from '../../context/StoreContext'
 
 const List = () => {
   const url = "http://localhost:4000";
@@ -33,6 +35,9 @@ const List = () => {
     fetchList();
   }, []);
 
+  const navigate = useNavigate();
+  const { updateAction } = useContext(StoreContext)
+
   return (
     <div className="list add flex-col">
       <p className="header-list" >Danh sách tất cả món ăn</p>
@@ -57,7 +62,7 @@ const List = () => {
               <p>{item.price}.000₫</p>
               <div>
                 <RiDeleteBin6Line onClick={() => removeFood(item._id)} className="delete-icon icon" />
-                <LiaUserEditSolid className="edit-icon icon" />
+                <LiaUserEditSolid onClick={() => updateAction(item)} className="edit-icon icon" />
               </div>
             </div>
           );
