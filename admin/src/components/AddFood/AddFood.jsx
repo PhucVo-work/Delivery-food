@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import "./AddFood.css";
 import { StoreContext } from "../../context/StoreContext";
 import { IoArrowBackCircle } from "react-icons/io5";
+import { MdOutlineDoubleArrow } from "react-icons/md";
 
 const AddFood = ({ product }) => {
   const url = "http://localhost:4000";
@@ -88,7 +89,10 @@ const AddFood = ({ product }) => {
     // }
     let response;
     if (IsUpdate) {
-      response = await axios.put(`${url}/api/food/update/${product._id}`, formData);
+      response = await axios.put(
+        `${url}/api/food/update/${product._id}`,
+        formData
+      );
     } else {
       response = await axios.post(`${url}/api/food/add`, formData);
     }
@@ -104,7 +108,12 @@ const AddFood = ({ product }) => {
   return (
     <div className="add">
       <div className={IsUpdate ? "update" : "disabled"}>
-        <h2 className="update-header">Cập nhật món ăn</h2>
+        <div className="flex-row" >
+          <h2 className="update-header">Cập nhật món ăn</h2>
+          <MdOutlineDoubleArrow className="icon-arowLeft"/>
+          <h2 className="name-product">{data.name}</h2>
+        </div>
+
         <IoArrowBackCircle onClick={backToList} className="icon-back" />
       </div>
       <form className="add-content" onSubmit={onSubmitHandler}>
@@ -135,7 +144,11 @@ const AddFood = ({ product }) => {
             <div className="add-category-amount">
               <div className="add-category flex-col">
                 <p className="fx-24">Khẩu phần</p>
-                <select onChange={onChangHandler} name="amount" value={data.amount}>
+                <select
+                  onChange={onChangHandler}
+                  name="amount"
+                  value={data.amount}
+                >
                   <option value="1-2 người">1 - 2 người</option>
                   <option value="2-3 người">2- 3 người</option>
                 </select>
@@ -154,7 +167,11 @@ const AddFood = ({ product }) => {
 
             <div className="add-category flex-col">
               <p className="fx-24">Loại món ăn</p>
-              <select onChange={onChangHandler} name="category" value={data.category}>
+              <select
+                onChange={onChangHandler}
+                name="category"
+                value={data.category}
+              >
                 <option value="Salad">Salad</option>
                 <option value="Cuốn">Cuốn</option>
                 <option value="Tráng miệng">Tráng miệng</option>

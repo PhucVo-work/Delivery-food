@@ -46,8 +46,18 @@
 
 .update-header{
   font-size: 26px;
-  color: tomato ;
   display: block;
+}
+
+.icon-arowLeft{
+  margin-top: 8px;
+  width: 22px;
+  height: 22px;
+}
+
+.name-product{
+  font-size: 22px;
+  color: tomato;
 }
 
 .left-description {

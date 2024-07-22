@@ -53,6 +53,13 @@ const removeFood = async (req, res) => {
 const updateFood = async (req, res) => {
   try {
     const foodId = req.params.id;
+    const existingFood = await foodModel.findById(foodId);
+    if (!existingFood) {
+      return res.json({
+        success: false,
+        message: "Không tìm thấy món ăn để cập nhật",
+      });
+    }
     let updateData = {};
 
     // Kiểm tra và thêm các trường cần update
@@ -80,7 +87,11 @@ const updateFood = async (req, res) => {
 
     // Xóa ảnh cũ nếu có sự thay đổi ảnh
     if (req.file && updatedFood.image) {
-      fs.unlink(`uploads/${updatedFood.image}`, () => {});
+      fs.unlink(`uploads/${existingFood.image}`, (err) => {
+        if (err) {
+          console.log(`Lỗi khi xóa ảnh cũ: ${err.message}`);
+        }
+      });
     }
 
     res.json({

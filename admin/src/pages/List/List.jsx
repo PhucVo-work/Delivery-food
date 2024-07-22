@@ -61,8 +61,8 @@ const List = () => {
               <p>{item.amount}</p>
               <p>{item.price}.000₫</p>
               <div>
-                <RiDeleteBin6Line onClick={() => removeFood(item._id)} className="delete-icon icon" />
                 <LiaUserEditSolid onClick={() => updateAction(item)} className="edit-icon icon" />
+                <RiDeleteBin6Line onClick={() => removeFood(item._id)} className="delete-icon icon" />
               </div>
             </div>
           );
