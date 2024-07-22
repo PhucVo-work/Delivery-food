@@ -3,6 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px 4%;
+    border-bottom: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    background-color: #fcfcfc;
+    min-height: 78px;
+    margin-bottom: 2px;
 }
 
 .navbar .logo{

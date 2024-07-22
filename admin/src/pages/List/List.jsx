@@ -7,8 +7,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import {  useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
 
-const List = () => {
-  const url = "http://localhost:4000";
+const List = ({ url }) => {
   const [list, setList] = useState([]);
 
   const fetchList = async () => {

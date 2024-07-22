@@ -162,7 +162,7 @@ export const food_list = [
         description: "Với nguyên liệu chính là lá và hoa của cây cỏ ba lá trắng (Trifolium repens) cùng với nước sốt vinaigrette chanh",
         category: "Salad",
         amount: "1-2 người",
-        time: "10-20 phút"
+        time: "10-18 phút"
     },
     {
         _id: "4",
@@ -192,7 +192,7 @@ export const food_list = [
         description: "Nguyên liệu chính là ức gà nướng được cuốn trong bánh tortilla ăn cùng với nước sốt Peri Peri",
         category: "Cuốn",
         amount: "2-3 người",
-        time: "15-20 phút"
+        time: "5-10 phút"
     },
     {
         _id: "7",
@@ -202,7 +202,7 @@ export const food_list = [
         description: "Nguyên liệu chính là ức gà và đùi gà nướng được cuốn trong bánh tortilla ăn cùng với nước sốt Peri Peri",
         category: "Cuốn",
         amount: "1-2 người",
-        time: "15-20 phút"
+        time: "5-10 phút"
     },
     {
         _id: "8",
@@ -212,7 +212,7 @@ export const food_list = [
         description: "Nguyên liệu chính là ức gà và rau nướng được cuốn trong bánh tortilla ăn cùng với nước sốt Peri Peri",
         category: "Cuốn",
         amount: "2-3 người",
-        time: "15-20 phút"
+        time: "5-10 phút"
     },
     {
         _id: "9",
@@ -269,7 +269,7 @@ export const food_list = [
         name: "Sandwich Chay",
         image: food_14,
         price: 120,
-        description: "Bánh mì sandwich ăn cùng với nhân nấm bào ngư hoặc đùi gà xào kèm rau chân vịt cùng với sốt kem ",
+        description: "Bánh mì sandwich ăn cùng với nhân nấm bào ngư hoặc nấm đùi gà xào kèm rau chân vịt cùng với sốt kem ",
         category: "Sandwich",
         amount: "2-3 người",
         time: "5-10 phút"
@@ -342,7 +342,7 @@ export const food_list = [
         description: "Các loại nấm được hái trực tiếp từ trang trại được xào cùng với tỏi",
         category: "Thuần chay",
         amount: "1-2 người",
-        time: "10-15 phút"
+        time: "10-18 phút"
     },
     {
         _id: "22",
@@ -352,7 +352,7 @@ export const food_list = [
         description: "Loại hoa Cauliflower được tẩm bột và chiên ngập dầu mang lại cảm giác giòn tan",
         category: "Thuần chay",
         amount: "2-3 người",
-        time: "10-15 phút"
+        time: "10-18 phút"
     },
     {
         _id: "23",
@@ -362,7 +362,7 @@ export const food_list = [
         description: "Món trộn từ các nguyện liệu chính là rau theo phong cách Paulao",
         category: "Thuần chay",
         amount: "1-2 người",
-        time: "10-15 phút"
+        time: "10-18 phút"
     },
     {
         _id: "24",
@@ -372,7 +372,7 @@ export const food_list = [
         description: "Cơm chay Zucchini là sự kết hợp với cơm và các loại rau củ, là một món ăn nhẹ và lành mạnh",
         category: "Thuần chay",
         amount: "2-3 người",
-        time: "15-20 phút"
+        time: "5-10 phút"
     },
     {
         _id: "25",

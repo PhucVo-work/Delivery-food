@@ -7,8 +7,7 @@ import { StoreContext } from "../../context/StoreContext";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { MdOutlineDoubleArrow } from "react-icons/md";
 
-const AddFood = ({ product }) => {
-  const url = "http://localhost:4000";
+const AddFood = ({ product, url }) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -108,9 +107,9 @@ const AddFood = ({ product }) => {
   return (
     <div className="add">
       <div className={IsUpdate ? "update" : "disabled"}>
-        <div className="flex-row" >
+        <div className="flex-row">
           <h2 className="update-header">Cập nhật món ăn</h2>
-          <MdOutlineDoubleArrow className="icon-arowLeft"/>
+          <MdOutlineDoubleArrow className="icon-arowLeft" />
           <h2 className="name-product">{data.name}</h2>
         </div>
 
@@ -149,8 +148,8 @@ const AddFood = ({ product }) => {
                   name="amount"
                   value={data.amount}
                 >
-                  <option value="1-2 người">1 - 2 người</option>
-                  <option value="2-3 người">2- 3 người</option>
+                  <option value="1-2 người">1-2 người</option>
+                  <option value="2-3 người">2-3 người</option>
                 </select>
               </div>
             </div>
@@ -161,6 +160,7 @@ const AddFood = ({ product }) => {
                 <select onChange={onChangHandler} name="time" value={data.time}>
                   <option value="5-10 phút">5-10 phút</option>
                   <option value="20-30 phút">20-30 phút</option>
+                  <option value="10-18 phút">10-18 phút</option>
                 </select>
               </div>
             </div>

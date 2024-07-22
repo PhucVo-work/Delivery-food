@@ -4,26 +4,26 @@
 
 .add {
   width: 80%;
-  margin-left: max(5vw, 25px);
+  margin-left: max(5vw, 340px);
   margin-top: 30px;
   color: #6d6d6d;
   font-size: 16px;
 }
 
-.update{
+.update {
   width: 83%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.update .icon-back{
+.update .icon-back {
   width: 40px;
   height: 40px;
   cursor: pointer;
 }
 
-.update .icon-back:hover{
+.update .icon-back:hover {
   color: tomato;
 }
 
@@ -44,18 +44,18 @@
   gap: 20px;
 }
 
-.update-header{
+.update-header {
   font-size: 26px;
   display: block;
 }
 
-.icon-arowLeft{
+.icon-arowLeft {
   margin-top: 8px;
   width: 22px;
   height: 22px;
 }
 
-.name-product{
+.name-product {
   font-size: 22px;
   color: tomato;
 }
@@ -168,6 +168,14 @@
 }
 
 @media (max-width: 1535px) {
+  .add {
+    width: 80%;
+    margin-left: max(20vw, 280px);
+    margin-top: 30px;
+    color: #6d6d6d;
+    font-size: 16px;
+  }
+
   .left-description {
     width: 50%;
   }
@@ -198,6 +206,14 @@
 }
 
 @media (max-width: 1266px) and (min-width: 1010px) {
+  .add {
+    width: 80%;
+    margin-left: max(15vw, 240px);
+    margin-top: 30px;
+    color: #6d6d6d;
+    font-size: 16px;
+  }
+
   .left-description {
     width: 60%;
   }
@@ -263,7 +279,15 @@
 }
 
 @media (max-width: 1009px) {
-  .update-header{
+  .add {
+    width: 80%;
+    margin-left: max(20vw, 100px);
+    margin-top: 30px;
+    color: #6d6d6d;
+    font-size: 16px;
+  }
+
+  .update-header {
     font-size: 26px;
     color: tomato;
     margin-left: 12px;

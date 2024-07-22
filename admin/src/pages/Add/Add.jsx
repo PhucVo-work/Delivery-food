@@ -3,9 +3,9 @@ import "./Add.css";
 import { assets } from "../../assets/assets";
 import AddFood from "../../components/AddFood/AddFood";
 
-const Add = () => {
+const Add = ({url}) => {
   return (
-    <AddFood />
+    <AddFood url={url} />
   )
 };
 

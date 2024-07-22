@@ -6,6 +6,8 @@
   font-size: max(1vw, 18px);
   font-weight: 500;
   border-bottom: none;
+  position: fixed;
+  top: 80px;
 }
 
 .sidebar-options {
