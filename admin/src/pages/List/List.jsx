@@ -44,8 +44,8 @@ const List = ({ url }) => {
           <p>Ảnh</p>
           <p>Tên</p>
           <p>Loại</p>
-          <p>Thời gian nấu</p>
           <p>Khẩu phần</p>
+          <p>Thời gian nấu</p>
           <p>Giá</p>
           <p>Thao tác</p>
         </div>
@@ -55,8 +55,8 @@ const List = ({ url }) => {
               <img src={`${url}/images/` + item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
-              <p>{item.time}</p>
               <p>{item.amount}</p>
+              <p>{item.time}</p>
               <p>{item.price}.000₫</p>
               <div>
                 <LiaUserEditSolid onClick={() => updateAction(item)} className="edit-icon icon" />

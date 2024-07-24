@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 import { RiLoginCircleFill } from "react-icons/ri";
 import { FaBagShopping } from "react-icons/fa6";
@@ -12,8 +12,16 @@ import { VscSignOut } from "react-icons/vsc";
 // làm active khi bấm vào item nào trong navbar thì item phải được active
 const Navbar = ({ setShowLogin }) => {
   const [hasShadow, setHasShadow] = useState(false);
-  const { getTotalCartAmount, menu, setMenu, token, setToken } =
-    useContext(StoreContext);
+  const { getTotalCartAmount, menu, setMenu, token, setToken, clearProductLocalStorage } = useContext(StoreContext);
+
+  const navigate = useNavigate();
+  const logout =  () => {
+    localStorage.removeItem("token");
+    setToken("");
+    clearProductLocalStorage();
+    navigate("/")
+  }
+
   const handleScroll = () => {
     if (window.scrollY > 82) {
       setHasShadow(true);
@@ -29,16 +37,21 @@ const Navbar = ({ setShowLogin }) => {
     };
   }, []);
 
+  const handleNavigate = (menu) => {
+    setMenu(`${menu}`)
+    clearProductLocalStorage();
+  }
+
   return (
     <div className={`container ${hasShadow ? "shadow" : ""}`}>
       <div className="navbar">
-        <Link to="/" onClick={() => setMenu("home")}>
+        <Link to="/" onClick={() => handleNavigate("home")}>
           <img src={assets.logo} alt="" className="logo" />
         </Link>
         <ul className="navbar-menu">
           <Link
             to="/"
-            onClick={() => setMenu("home")}
+            onClick={() => handleNavigate("home")}
             className={menu === "home" ? "active" : ""}
           >
             Trang chủ
@@ -75,7 +88,7 @@ const Navbar = ({ setShowLogin }) => {
           </div>
           {/* xử lý font awesomeIcon khi active basket thì đổi màu cần phải link trực tiếp*/}
           <div className="navbar-search-icon">
-            <Link to="/cart" onClick={() => setMenu("Cart")}>
+            <Link to="/cart" onClick={() => handleNavigate("Cart")}>
               <FaBagShopping
                 className={
                   menu === "Cart"
@@ -96,13 +109,13 @@ const Navbar = ({ setShowLogin }) => {
               <FaUserCircle className="icon-user" />
               <ul className="nav-profile-dropdown">
                 <li>
-                  <FiShoppingBag />
-                  <p>Đơn của bạn</p>
+                  <FiShoppingBag className="icon"/>
+                  <p className="nav-profileLink">Đơn của bạn</p>
                 </li>
-                <hr />
+                <span />
                 <li>
-                  <VscSignOut />
-                  <p>Đăng xuất</p>
+                  <VscSignOut className="icon" />
+                  <p className="nav-profileLink" onClick={()=>logout()}>Đăng xuất</p>
                 </li>
               </ul>
             </div>

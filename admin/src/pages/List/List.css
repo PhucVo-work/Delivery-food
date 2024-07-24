@@ -12,15 +12,21 @@
   border: 2px solid #cacaca;
   font-size: 13px;
   border-radius: 4px;
+  margin-top: 8px;
 }
 
 .list-table-format .title {
   background-color: #f9f9f9;
 }
 
+.list-table-format.title > p{
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .list-table-format img {
   width: 180px;
-  margin-left: 15px;
+  max-height: 140px;
 }
 
 .icon{

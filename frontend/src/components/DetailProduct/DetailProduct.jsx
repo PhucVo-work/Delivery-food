@@ -8,7 +8,7 @@ import { TbShoppingBag, TbShoppingBagMinus, TbShoppingBagPlus } from "react-icon
 
 const DetailProduct = ( props ) => {
     const { product } = props
-    const {cartItems, addToCart, removeFromCart} = useContext(StoreContext)
+    const {cartItems, addToCart, removeFromCart, url} = useContext(StoreContext)
   return (
     <div className='detail-product row'>
       <div className='detail-product-right l-6 m-7 c-12'>
@@ -38,7 +38,7 @@ const DetailProduct = ( props ) => {
           </div>
       </div>
       <div className="detail-product-img l-5 m-4 c-12">
-        <img src={product.image} alt="" className='product-image' />
+        <img src={url+"/images/"+product.image} alt="" className='product-image' />
         <div className='detail-product-sub'>
           
           <div className='detail-product-header'>
