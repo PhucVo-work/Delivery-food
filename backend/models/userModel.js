@@ -4,8 +4,8 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, require: true, unique: true },
   password: { type: String, require: true },
-  cardData: { type: Object, default: {}},
-
+  cartData: { type: Object, default: {}},
+  
 }, {minimize: false});
 
 const userModel = mongoose.models.user || mongoose.model("user", userSchema)
