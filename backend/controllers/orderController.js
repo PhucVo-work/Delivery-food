@@ -1,6 +1,6 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
-import stripe, { Stripe } from "stripe";
+import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -24,7 +24,7 @@ const placeOrder = async (req, res) => {
         product_data: {
           name: item.name,
         },
-        unit_amount: item.price * 100 * 25,
+        unit_amount: item.price * 100 * 10,
       },
       quantity: item.quantity,
     }));
@@ -32,9 +32,9 @@ const placeOrder = async (req, res) => {
       price_data: {
         currency: "vnd",
         product_data: {
-          name: "Thanh toán đơn hàng",
+          name: "Phí giao hàng",
         },
-        unit_amount: 2 * 100 * 25,
+        unit_amount: 20 * 100 * 10,
       },
       quantity: 1,
     });

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
+import axios from "axios";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, token, food_list, cartItems, url } =
@@ -18,14 +19,64 @@ const PlaceOrder = () => {
     phone: "",
   });
 
+  const [paymentMethod, setPaymentMethod] = useState("online"); // state để lưu phương thức thanh toán
+
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
   };
 
+  const placeOrder = async (event) => {
+    event.preventDefault();
+    let orderItems = [];
+    food_list.map((item) => {
+      if (cartItems[item._id] > 0) {
+        let itemInfo = item;
+        itemInfo["quantity"] = cartItems[item._id];
+        orderItems.push(itemInfo);
+      }
+    });
+    let orderData = {
+      address: data,
+      items: orderItems,
+      amount: getTotalCartAmount() + 2,
+    };
+    // thanh toán online
+    // let response = await axios.post(url+"/api/order/place", orderData, {headers: {token}});
+    // if( response.data.success){
+    //   const {session_url} = response.data;
+    //   window.location.replace(session_url);
+    // }else{
+    //   alert("Lỗi")
+    // }
+
+    // tự code
+
+    if (paymentMethod === "online") {
+      let response = await axios.post(url + "/api/order/place", orderData, {
+        headers: { token },
+      });
+      if (response.data.success) {
+        const { session_url } = response.data;
+        window.location.replace(session_url);
+      } else {
+        alert("Lỗi");
+      }
+    } else if (paymentMethod === "cod") {
+      let response = await axios.post(url + "/api/order/place", orderData, {
+        headers: { token },
+      });
+      if (response.data.success) {
+        alert("Đặt hàng thành công! Thanh toán khi nhận hàng.");
+      } else {
+        alert("Lỗi");
+      }
+    }
+  };
+
   return (
-    <from className="place-order">
+    <form onSubmit={placeOrder} className="place-order">
       <div className="place-order-left">
         <p className="title">Delivery Information</p>
         <div className="multi-fields">
@@ -140,10 +191,32 @@ const PlaceOrder = () => {
               </b>
             </div>
           </div>
-          <button>Thanh toán</button>
+          <div className="payment-method">
+            <label>
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="online"
+                checked={paymentMethod === "online"}
+                onChange={() => setPaymentMethod("online")}
+              />
+              Thanh toán trực tuyến
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="cod"
+                checked={paymentMethod === "cod"}
+                onChange={() => setPaymentMethod("cod")}
+              />
+              Thanh toán khi nhận hàng (COD)
+            </label>
+          </div>
+          <button type="submit">Thanh toán</button>
         </div>
       </div>
-    </from>
+    </form>
   );
 };
 
