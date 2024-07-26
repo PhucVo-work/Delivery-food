@@ -61,13 +61,16 @@
 }
 
 .cart-total button{
-    width: max(15vw, 200px);
+    margin-top: 4px;
+    width: max(15vw, 250px);
     background-color: tomato;
     color: white;
     border: none;
-    padding: 12px 0px;
+    padding: 18px 12px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .cart-promocode{

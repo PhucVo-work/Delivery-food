@@ -61,7 +61,7 @@ const Cart = () => {
               <b>{getTotalCartAmount()===0 ? "0₫" : `${getTotalCartAmount()+20}.000₫`}</b>
             </div>
           </div>
-          <button onClick={() => navigate('/order')} >Tiến hành xác nhận</button>
+          <button onClick={() => navigate('/order')} >Điền thông tin để mua hàng</button>
         </div>
         <div className="cart-promocode">
           <div>

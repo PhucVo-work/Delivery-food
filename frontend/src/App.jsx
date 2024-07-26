@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
 import Product from './pages/Product/Product'
 import ScrollToTop from './components/ScrollToTop'
+import Verify from './pages/Verify/Verify'
+import MyOrders from './pages/MyOrders/MyOrders'
 
 const App = () => {
 
@@ -27,6 +29,8 @@ const App = () => {
                 < Route path='/product' element={<Product/>}>
                   < Route path=':id' element={<Product/>}/>
                 </Route>
+                <Route path='/verify' element={<Verify/>}/>
+                <Route path='/myorders' element={<MyOrders/>}/>  
               </Routes>
             </ScrollToTop>
         </div>

@@ -108,7 +108,7 @@ const Navbar = ({ setShowLogin }) => {
             <div className="navbar-profile">
               <FaUserCircle className="icon-user" />
               <ul className="nav-profile-dropdown">
-                <li>
+                <li onClick={()=>navigate('/myorders')}>
                   <FiShoppingBag className="icon"/>
                   <p className="nav-profileLink">Đơn của bạn</p>
                 </li>

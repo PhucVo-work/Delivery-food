@@ -67,6 +67,7 @@ import baemin from './baemin.png'
 import be from './be.png'
 import gojeck from './gojeck.png'
 import grab from './grab.png'
+import parcel_icon1 from './parcel_icon1.png'
 
 export const assets = {
     logo,
@@ -90,6 +91,7 @@ export const assets = {
     logout_icon,
     bag_icon,
     parcel_icon,
+    parcel_icon1,
     phone_icon,
     envelope_icon,
     baemin,

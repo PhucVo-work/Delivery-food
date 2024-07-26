@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
-  const { getTotalCartAmount, token, food_list, cartItems, url } =
-    useContext(StoreContext);
+  const { getTotalCartAmount, token, food_list, cartItems, url } = useContext(StoreContext);
+  const navigate = useNavigate();
 
   const [data, setData] = useState({
     firstName: "",
@@ -37,6 +38,7 @@ const PlaceOrder = () => {
         orderItems.push(itemInfo);
       }
     });
+
     let orderData = {
       address: data,
       items: orderItems,
@@ -69,11 +71,24 @@ const PlaceOrder = () => {
       });
       if (response.data.success) {
         alert("Đặt hàng thành công! Thanh toán khi nhận hàng.");
+        navigate("/myorders");
       } else {
         alert("Lỗi");
       }
     }
   };
+
+
+
+  useEffect(()=>{
+    if(!token){
+      alert('bạn cần đăng nhập để làm bước tiếp theo')
+      navigate('/cart') 
+    } else if(getTotalCartAmount()===0){
+      alert('Giỏ hàng của bạn đang trống')
+      navigate('/cart')
+    }
+  },[token])
 
   return (
     <form onSubmit={placeOrder} className="place-order">
@@ -191,26 +206,29 @@ const PlaceOrder = () => {
               </b>
             </div>
           </div>
+          <h2>Phương Thức Thanh Toán</h2>
           <div className="payment-method">
-            <label>
+            <label className="option-list">
               <input
+                className="option-payment"
                 type="radio"
                 name="paymentMethod"
                 value="online"
                 checked={paymentMethod === "online"}
                 onChange={() => setPaymentMethod("online")}
               />
-              Thanh toán trực tuyến
+              <p>Thanh toán trực tuyến</p>
             </label>
-            <label>
+            <label className="option-list">
               <input
+                className="option-payment"
                 type="radio"
                 name="paymentMethod"
                 value="cod"
                 checked={paymentMethod === "cod"}
                 onChange={() => setPaymentMethod("cod")}
               />
-              Thanh toán khi nhận hàng (COD)
+              <p>Thanh toán khi nhận hàng</p>
             </label>
           </div>
           <button type="submit">Thanh toán</button>
