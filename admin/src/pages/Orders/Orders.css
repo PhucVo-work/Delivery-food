@@ -10,6 +10,11 @@
     color: #505050;
 }
 
+.parcel-icon{
+    width: 50;
+    height: 56px;
+}
+
 .order-item-food, .order-item-name{
     font-weight: 600;
 }

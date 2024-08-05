@@ -1,4 +1,5 @@
 import logo from './logo.png'
+import logo2 from './logo2.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import qr_icon from './qr_icon.svg'
@@ -58,7 +59,6 @@ import cross_icon from './cross_icon.svg'
 import selector_icon from './selector_icon.png'
 import rating_starts from './rating_starts.png'
 import profile_icon from './profile_icon.png'
-import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 import phone_icon from './phone_icon.svg'
@@ -71,6 +71,7 @@ import parcel_icon1 from './parcel_icon1.png'
 
 export const assets = {
     logo,
+    logo2,
     basket_icon,
     header_img,
     search_icon,
@@ -89,7 +90,6 @@ export const assets = {
     selector_icon,
     profile_icon,
     logout_icon,
-    bag_icon,
     parcel_icon,
     parcel_icon1,
     phone_icon,

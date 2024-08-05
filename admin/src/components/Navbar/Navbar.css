@@ -12,7 +12,8 @@
 }
 
 .navbar .logo{
-    width: max(10%, 80px);
+    width: 90px;
+    max-height: 90px;
 }
 
 .navbar .profile{

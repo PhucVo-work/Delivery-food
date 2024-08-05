@@ -23,7 +23,8 @@
 }
 
 .navbar .logo {
-  width: 150px;
+  width: 90px;
+  max-height: 90px;
 }
 
 .navbar-menu {
@@ -244,7 +245,7 @@
 
 @media (max-width: 1120px) {
   .navbar .logo {
-    width: 140px;
+    width: 80px;
   }
   .navbar-menu {
     gap: 20px;
@@ -266,7 +267,7 @@
 
 @media (min-width: 872px) and (max-width: 1023px) {
   .navbar .logo {
-    width: 120px;
+    width: 80px;
   }
 
   .navbar-menu {

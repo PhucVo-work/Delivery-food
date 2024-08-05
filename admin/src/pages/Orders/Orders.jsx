@@ -40,7 +40,7 @@ useEffect(()=>{
       <div className="order-list">
         {orders.map((order,index)=>(
           <div key={index} className='order-item'>
-            <img src={assets.parcel_icon} alt="" />
+            <img className='parcel-icon' src={assets.parcel_icon1} alt="" />
             <div>
               <p className='order-item-food'>
                 {order.items.map((item,index)=>{
