@@ -2,13 +2,16 @@ import React, { useContext, useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
-import axios from "axios"
-
+import axios from "axios";
+import Swal from "sweetalert2";
+import { RiEyeCloseFill } from "react-icons/ri";
+import { RiEyeFill } from "react-icons/ri";
 
 const LoginPopup = ({ setShowLogin }) => {
-
   const { url, setToken } = useContext(StoreContext);
   const [currState, setCurrState] = useState("Đăng nhập");
+  const [showPassword, setShowPassword] = useState("password");
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -22,25 +25,35 @@ const LoginPopup = ({ setShowLogin }) => {
   };
 
   const onLogin = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     let newUrl = url;
-    if(currState==="Đăng nhập"){
-        newUrl += "/api/user/login"
-    }else{
-        newUrl += "/api/user/register"
+    if (currState === "Đăng nhập") {
+      newUrl += "/api/user/login";
+    } else {
+      newUrl += "/api/user/register";
     }
 
     const response = await axios.post(newUrl, data);
 
-    if(response.data.success){
-        setToken(response.data.token);
-        localStorage.setItem("token", response.data.token);
-        setShowLogin(false)
-    }else{
-        alert(response.data.message)
+    if (response.data.success) {
+      setToken(response.data.token);
+      localStorage.setItem("token", response.data.token);
+      setShowLogin(false);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Ui...",
+        text: response.data.message || "Có lỗi xảy ra. Vui lòng thử lại!",
+      });
     }
+  };
 
-  }
+  const toggleShowPassword = () => {
+    setShowPassword((prevState) =>
+      prevState === "password" ? "text" : "password"
+    );
+    setIsPasswordVisible((prevState) => !prevState);
+  };
 
   return (
     <div className="login-popup">
@@ -77,18 +90,24 @@ const LoginPopup = ({ setShowLogin }) => {
             placeholder="Email của bạn"
             required
           />
-          <input
-            name="password"
-            onChange={onChangeHandler}
-            value={data.password}
-            type="password"
-            id="Password"
-            placeholder="Nhập mật khẩu"
-            required
-          />
+          <div className="relative">
+            <input
+              name="password"
+              onChange={onChangeHandler}
+              value={data.password}
+              type={showPassword}
+              id="Password"
+              className=""
+              placeholder="Nhập mật khẩu"
+              required
+            />
+            <span onClick={toggleShowPassword} >
+              {isPasswordVisible ?  <RiEyeFill className= "eye-icon"/> : <RiEyeCloseFill className= "eye-icon"/>}
+            </span>
+          </div>
         </div>
 
-        <button type="submit" >
+        <button type="submit">
           {currState === "Đăng ký" ? "Tạo tài khoản" : "Đăng nhập"}
         </button>
 
@@ -100,12 +119,12 @@ const LoginPopup = ({ setShowLogin }) => {
           </p>
         </div>
         {currState === "Đăng nhập" ? (
-          <p>
+          <p className="fx-18">
             Tạo tài khoản mới?{" "}
             <span onClick={() => setCurrState("Đăng ký")}>Ở đây!</span>
           </p>
         ) : (
-          <p>
+          <p className="fx-18">
             Đã có tài khoản?{" "}
             <span onClick={() => setCurrState("Đăng nhập")}>Đăng nhập!</span>
           </p>

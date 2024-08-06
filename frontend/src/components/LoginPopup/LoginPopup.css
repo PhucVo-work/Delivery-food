@@ -13,7 +13,7 @@
 
 .login-popup-container{
     place-self: center;
-    width: max(23vw, 330px);
+    width: max(27vw, 330px);
     color: #808080;
     background-color: white;
     display: flex;
@@ -30,10 +30,11 @@
     justify-content: space-between;
     align-items: center;
     color: black;
+    font-size: 19px;
 }
 
 .login-popup-title img{
-    width: 16px;
+    width: 22px;
     cursor: pointer;
 }
 
@@ -46,8 +47,11 @@
 .login-popup-inputs input{
     outline: none;
     border: 1px solid #c9c9c9;
-    padding: 10px;
+    padding: 12px;
     border-radius: 4px;
+    height: 50px;
+    font-size: 16px;
+    margin-top: 4px;
 }
 
 .login-popup-inputs input:first-child{
@@ -60,8 +64,9 @@
     border-radius: 4px;
     color: white;
     background-color: tomato;
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
+    margin: 6px 0;
 }
 
 .login-popup-condition{
@@ -69,6 +74,8 @@
     align-items: start;
     gap: 8px;
     margin-top: -4px;
+    margin-bottom: 4px;
+    font-size: 15px;
 }
 
 .login-popup-condition input{
@@ -79,4 +86,26 @@
     color: tomato;
     font-weight: 500;
     cursor: pointer;
+}
+
+.relative{
+    position: relative;
+}
+
+#Password{
+    position: relative;
+    width: 100%;
+}
+
+.eye-icon{
+    position: absolute;
+    top: 14px;
+    right: 7px;
+    min-width: 28px;
+    height: 28px;
+    color: tomato;
+}
+
+.fx-18{
+    font-size: 17px;
 }

@@ -16,13 +16,33 @@
     bottom: 10%;
     left: 6vw;
     animation: fadeIn 3s;
-    text-align: justify;
 }
 
 .header-contents h2{
+    min-width: 525px;
     font-weight: 600;
     color: white;
     font-size: max(4.5vw, 22px);
+}
+
+.typing-container {
+    height: auto;           
+    position: relative; 
+    height: 100px;
+  }
+
+.header-title{
+    position: absolute; 
+    top: -65px;
+    left: 0; 
+    -webkit-font-smoothing: antialiased; /* Làm mượt chữ trên trình duyệt WebKit */
+    -moz-osx-font-smoothing: grayscale;  /* Làm mượt chữ trên trình duyệt Firefox */
+    text-rendering: optimizeLegibility;  /* Tối ưu hóa hiển thị văn bản */
+    animation: step-start 0.3s;
+}
+
+.header-introduce{
+    text-align: justify;
 }
 
 .header-contents > .header-introduce{
@@ -43,15 +63,75 @@
     font-weight: 600;
 }
 
-@media (max-width: 1050px) {
-    .header-contents{
-        max-width: 45%;
+@media (max-width: 1400px) {
+    .header-title{
+        position: absolute; 
+        top: -30px;
+        left: 0; 
+        -webkit-font-smoothing: antialiased; /* Làm mượt chữ trên trình duyệt WebKit */
+        -moz-osx-font-smoothing: grayscale;  /* Làm mượt chữ trên trình duyệt Firefox */
+        text-rendering: optimizeLegibility;  /* Tối ưu hóa hiển thị văn bản */
+        animation: step-start 0.3s;
     }
 }
 
+@media (max-width: 1050px) {
+    .header-contents h2{
+        max-width: 300px;
+    }
+
+    .typing-container {
+        height: auto;           
+        position: relative; 
+        height: 100px;
+      }
+    
+    .header-title{
+        position: absolute; 
+        top: -40px;
+        left: 0; 
+        -webkit-font-smoothing: antialiased; /* Làm mượt chữ trên trình duyệt WebKit */
+        -moz-osx-font-smoothing: grayscale;  /* Làm mượt chữ trên trình duyệt Firefox */
+        text-rendering: optimizeLegibility;  /* Tối ưu hóa hiển thị văn bản */
+        animation: step-start 0.3s;
+    }
+
+    .header-contents{
+        max-width: 45%;
+    }
+
+    .header-contents p{
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    
+}
+
 @media (max-width: 750px) {
+    .typing-container {
+        height: auto;           
+        position: relative; 
+        height: 100px;
+    }
+    
+    .header-title{
+        position: absolute; 
+        top: 10px;
+        left: 0; 
+        -webkit-font-smoothing: antialiased; /* Làm mượt chữ trên trình duyệt WebKit */
+        -moz-osx-font-smoothing: grayscale;  /* Làm mượt chữ trên trình duyệt Firefox */
+        text-rendering: optimizeLegibility;  /* Tối ưu hóa hiển thị văn bản */
+        animation: step-start 0.3s;
+    }
+
     .header-contents{
         max-width: 65%;
+    }
+
+    .header-contents h2{
+        max-width: 70px;
     }
 
     .header-contents p{

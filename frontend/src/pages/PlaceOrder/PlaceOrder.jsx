@@ -3,6 +3,7 @@ import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, token, food_list, cartItems, url } = useContext(StoreContext);
@@ -63,17 +64,29 @@ const PlaceOrder = () => {
         const { session_url } = response.data;
         window.location.replace(session_url);
       } else {
-        alert("Lỗi");
+        Swal.fire({
+          icon: 'warning',
+          title: 'Ui...',
+          text: response.data.message,
+        });
       }
     } else if (paymentMethod === "cod") {
       let response = await axios.post(url + "/api/order/place", orderData, {
         headers: { token },
       });
       if (response.data.success) {
-        alert("Đặt hàng thành công! Thanh toán khi nhận hàng.");
+        Swal.fire({
+          icon: 'success',
+          title: 'Thành công!',
+          text: 'Thanh toán khi nhận hàng',
+        });
         navigate("/myorders");
       } else {
-        alert("Lỗi");
+        Swal.fire({
+          icon: 'warning',
+          title: 'Ui...',
+          text: response.data.message,
+        });
       }
     }
   };
@@ -82,10 +95,18 @@ const PlaceOrder = () => {
 
   useEffect(()=>{
     if(!token){
-      alert('bạn cần đăng nhập để làm bước tiếp theo')
+      Swal.fire({
+        icon: 'warning',
+        title: 'Ui...',
+        text: 'bạn cần đăng nhập để làm bước tiếp theo',
+      });
       navigate('/cart') 
     } else if(getTotalCartAmount()===0){
-      alert('Giỏ hàng của bạn đang trống')
+      Swal.fire({
+        icon: 'question',
+        title: 'Ui...',
+        text: 'Giỏ hàng của bạn đang trống',
+      });
       navigate('/cart')
     }
   },[token])

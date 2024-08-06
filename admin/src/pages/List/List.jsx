@@ -6,6 +6,7 @@ import { LiaUserEditSolid } from "react-icons/lia";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import {  useNavigate } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
+import Swal from 'sweetalert2';
 
 const List = ({ url }) => {
   const [list, setList] = useState([]);
@@ -18,6 +19,24 @@ const List = ({ url }) => {
       toast.error("Lỗi");
     }
   };
+
+  const confirmDelete = (foodId) => {
+    Swal.fire({
+      title: 'Bạn có chắc chắn muốn xóa?',
+      text: "Bạn sẽ không thể khôi phục lại món ăn này!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Có, xóa nó!',
+      cancelButtonText: 'Hủy'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeFood(foodId);
+      }
+    });
+  };
+
 
   const removeFood = async (foodId) => {
     const response = await axios.post(`${url}/api/food/remove`, {id:foodId})
@@ -60,7 +79,7 @@ const List = ({ url }) => {
               <p>{item.price}.000₫</p>
               <div>
                 <LiaUserEditSolid onClick={() => updateAction(item)} className="edit-icon icon" />
-                <RiDeleteBin6Line onClick={() => removeFood(item._id)} className="delete-icon icon" />
+                <RiDeleteBin6Line onClick={() => confirmDelete(item._id)} className="delete-icon icon" />
               </div>
             </div>
           );
