@@ -1,12 +1,13 @@
-import React, { useCallback, useEffect, useState,  useContext} from "react";
+import React, { useCallback, useEffect, useState, useContext } from "react";
 import "./List.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { LiaUserEditSolid } from "react-icons/lia";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import {  useNavigate } from 'react-router-dom'
-import { StoreContext } from '../../context/StoreContext'
-import Swal from 'sweetalert2';
+import { StoreContext } from "../../context/StoreContext";
+import Swal from "sweetalert2";
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
 
 const List = ({ url }) => {
   const [list, setList] = useState([]);
@@ -22,14 +23,14 @@ const List = ({ url }) => {
 
   const confirmDelete = (foodId) => {
     Swal.fire({
-      title: 'Bạn có chắc chắn muốn xóa?',
+      title: "Bạn có chắc chắn muốn xóa?",
       text: "Bạn sẽ không thể khôi phục lại món ăn này!",
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Có, xóa nó!',
-      cancelButtonText: 'Hủy'
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Có, xóa nó!",
+      cancelButtonText: "Hủy",
     }).then((result) => {
       if (result.isConfirmed) {
         removeFood(foodId);
@@ -37,27 +38,38 @@ const List = ({ url }) => {
     });
   };
 
-
   const removeFood = async (foodId) => {
-    const response = await axios.post(`${url}/api/food/remove`, {id:foodId})
+    const response = await axios.post(`${url}/api/food/remove`, { id: foodId });
     await fetchList();
-    if(response.data.success){
-      toast.success(response.data.message)
-    }else{
-      toast.error("Lỗi không xóa được món ăn")
+    if (response.data.success) {
+      toast.success(response.data.message);
+    } else {
+      toast.error("Lỗi không xóa được món ăn");
     }
-  }
+  };
 
   useEffect(() => {
     fetchList();
   }, []);
 
-  const navigate = useNavigate();
-  const { updateAction } = useContext(StoreContext)
+  useEffect(() => {
+    tippy(".edit-icon", {
+      content: "Sửa",
+      animation: "fade",
+      duration: [400, 100],
+    });
+    tippy(".delete-icon", {
+      content: "Xóa",
+      animation: "fade",
+      duration: [400, 100],
+    });
+  }, [list]);
+
+  const { updateAction } = useContext(StoreContext);
 
   return (
     <div className="list add flex-col">
-      <p className="header-list" >Danh sách tất cả món ăn</p>
+      <p className="header-list">Danh sách tất cả món ăn</p>
       <div className="list-table">
         <div className="list-table-format title">
           <p>Ảnh</p>
@@ -77,9 +89,15 @@ const List = ({ url }) => {
               <p>{item.amount}</p>
               <p>{item.time}</p>
               <p>{item.price}.000₫</p>
-              <div>
-                <LiaUserEditSolid onClick={() => updateAction(item)} className="edit-icon icon" />
-                <RiDeleteBin6Line onClick={() => confirmDelete(item._id)} className="delete-icon icon" />
+              <div className="icon-container">
+                <LiaUserEditSolid
+                  onClick={() => updateAction(item)}
+                  className="edit-icon icon"
+                />
+                <RiDeleteBin6Line
+                  onClick={() => confirmDelete(item._id)}
+                  className="delete-icon icon"
+                />
               </div>
             </div>
           );

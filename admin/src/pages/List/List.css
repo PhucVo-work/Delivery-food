@@ -27,21 +27,46 @@
 .list-table-format img {
   width: 180px;
   max-height: 160px;
+  border-radius: 4%;
+}
+
+.icon-container{
+  position: relative;
 }
 
 .icon{
   width: 20px;
   height: 20px;
   cursor: pointer;
+  outline: none;
+  transition: 0.3s;
 }
 
-.delete-icon {
+.icon:hover{
+  color: tomato ;
+}
 
+.delete-icon{
+  position: absolute; 
+}
+
+.delete-icon:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 34px;
+  height: 34px;
+  transition: 0.3s;
 }
 
 .edit-icon {
-  margin-right: 18px;
+  margin-right: 20px;
 } 
+
+.edit-icon:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 34px;
+  height: 34px;
+  transition: 0.3s;
+}
 
 @media (max-width: 600px) {
   .list-table-format {

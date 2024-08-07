@@ -58,6 +58,7 @@ useEffect(()=>{
                 <p>{order.address.city+", "+order.address.state+", "+order.address.country+", "+order.address.zipcode}</p>
               </div>
               <p className="order-item-phone">{order.address.phone}</p>
+              <p className='order-item-time'>{order.date}</p>
             </div>
             <p>Số món ăn: {order.items.length}</p>
             <p>{order.amount}.000₫</p>
