@@ -91,8 +91,6 @@ const PlaceOrder = () => {
     }
   };
 
-
-
   useEffect(()=>{
     if(!token){
       Swal.fire({

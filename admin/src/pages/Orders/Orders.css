@@ -3,8 +3,8 @@
   grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
   align-items: start;
   gap: 30px;
-  padding: 20px;
-  margin: 30px 0px;
+  padding: 30px 20px 30px 20px;
+  margin: 30px 0px 40px 0;
   font-size: 14px;
   color: #505050;
   background-color: #ffe8e4;
@@ -37,7 +37,7 @@
 
 .order-item-container{
   height: 100%;
-  padding-right: 35px;
+  padding-right: 41px;
   border-right: 5px dashed #505050;
   display: flex;
   flex-direction: column;
@@ -128,11 +128,47 @@
   border-color: #d5806f; /* Màu viền khi di chuột qua */
 }
 
+.f-16{
+  font-size: 16px;
+}
+
+.order-payment{
+  display: flex;
+  margin-top: 90px;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.icon-false{
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  color: tomato;
+  border-radius: 50%;
+  border: 1px solid #d5806f;
+  margin-right: 8px;
+}
+
+.icon-success{
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  color: #04ba70;
+  border-radius: 50%;
+  border: 1px solid #d5806f;
+  margin-right: 8px;
+}
+
+.order-payment p{
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+}
 
 @media (max-width: 1000px) {
   .order-item {
     font-size: 12px;
-    grid-template-columns: 0.5fr 2fr 1fr;
+    grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 1fr;
     padding: 15px 8px;
   }
   .order-item select {

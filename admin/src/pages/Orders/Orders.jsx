@@ -3,6 +3,8 @@ import "./Orders.css";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { assets } from "../../assets/assets";
+import { FaCheck } from "react-icons/fa6";
+import { FaExclamation } from "react-icons/fa";
 
 const Orders = ({ url }) => {
   const [orders, setOrders] = useState([]);
@@ -31,8 +33,6 @@ const Orders = ({ url }) => {
     fetchAllOrders();
   }, []);
 
-  
-
   return (
     <div className="order add">
       <h3>Đơn đặt hàng</h3>
@@ -42,7 +42,9 @@ const Orders = ({ url }) => {
             <div className="order-item-container">
               <img className="parcel-icon" src={assets.parcel_icon1} alt="" />
               <div className="order-item-time">
-                <p className="order-item-date">{new Date(order.date).toLocaleDateString("vi-VN")}</p>
+                <p className="order-item-date">
+                  {new Date(order.date).toLocaleDateString("vi-VN")}
+                </p>
                 <p className="order-item-hour">
                   {new Date(order.date).toLocaleTimeString("vi-VN", {
                     hour: "2-digit",
@@ -76,10 +78,26 @@ const Orders = ({ url }) => {
                     order.address.zipcode}
                 </p>
               </div>
-              <p className="order-item-phone">số điện thoại: {order.address.phone}</p>
+              <p className="order-item-phone">
+                số điện thoại: {order.address.phone}
+              </p>
             </div>
-            <p>Số món ăn: {order.items.length}</p>
-            <p>{order.amount}.000₫</p>
+            <p className="f-16">Số món ăn: {order.items.length}</p>
+            <div>
+              <p className="f-16">Tổng Tiền: {order.amount}.000₫</p>
+              <div>
+                {order.payment 
+                ?<div className="order-payment">
+                    <FaCheck className="icon-success" />
+                    <p>Đã thanh toán</p>
+                </div> 
+                :<div className="order-payment">
+                    <FaExclamation className="icon-false" />
+                    <p>Chưa Thanh Toán</p>
+                </div>}
+              </div>
+            </div>
+
             <select
               onChange={(event) => statusHandler(event, order._id)}
               value={order.status}
