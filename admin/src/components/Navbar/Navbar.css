@@ -9,6 +9,7 @@
     background-color: #fcfcfc;
     min-height: 78px;
     margin-bottom: 2px;
+    z-index: 1;
 }
 
 .navbar .logo{

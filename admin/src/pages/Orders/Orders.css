@@ -32,6 +32,7 @@
   height: 50px;
   border-radius: 50%;
   background-color: #fcfcfc;
+  z-index: 1;
 }
 
 .order-item-container{
@@ -53,6 +54,8 @@
 .order-item-hour{
   font-size: 16px;
   margin-left: 14px;
+  color: tomato;
+  font-weight: 600;
 }
 
 .order-item-info{
@@ -62,6 +65,11 @@
 .parcel-icon {
   width: 50;
   height: 56px;
+}
+
+.order-item-food{
+  color: tomato;
+  font-size: 16px;
 }
 
 .order-item-food,
