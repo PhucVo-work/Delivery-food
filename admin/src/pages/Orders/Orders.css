@@ -10,6 +10,7 @@
   background-color: #ffe8e4;
   border-radius: 15px;
   position: relative;
+  max-width: 1339px;
 }
 
 .order-item::before{
