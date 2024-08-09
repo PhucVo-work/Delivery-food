@@ -23,6 +23,12 @@ a{
   margin: auto;
 }
 
+.space-between{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 @keyframes fadeIn {
   0%{
     opacity: 0;

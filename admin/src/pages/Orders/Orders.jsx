@@ -41,7 +41,6 @@ const Orders = ({ url }) => {
           <div key={index} className="order-item">
             <div className="order-item-container">
               <img className="parcel-icon" src={assets.parcel_icon1} alt="" />
-              <div className="order-item-time">
                 <p className="order-item-date">
                   {new Date(order.date).toLocaleDateString("vi-VN")}
                 </p>
@@ -51,7 +50,6 @@ const Orders = ({ url }) => {
                     minute: "2-digit",
                   })}
                 </p>
-              </div>
             </div>
             <div className="order-item-info">
               <p className="order-item-food">

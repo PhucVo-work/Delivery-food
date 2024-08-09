@@ -54,7 +54,6 @@
 
 .order-item-hour{
   font-size: 16px;
-  margin-left: 14px;
   color: tomato;
   font-weight: 600;
 }
@@ -64,7 +63,7 @@
 }
 
 .parcel-icon {
-  width: 50;
+  width: 50px;
   height: 56px;
 }
 
