@@ -68,6 +68,10 @@ import be from './be.png'
 import gojeck from './gojeck.png'
 import grab from './grab.png'
 import parcel_icon1 from './parcel_icon1.png'
+import check_order from './check_order.png'
+import cooking from './cooking.png'
+import delivery from './delivery.png'
+import done_delivery from './done_delivery.png'
 
 export const assets = {
     logo,
@@ -97,7 +101,11 @@ export const assets = {
     baemin,
     be,
     gojeck,
-    grab
+    grab,
+    check_order,
+    done_delivery,
+    cooking,
+    delivery
 }
 
 export const menu_list = [

@@ -29,6 +29,10 @@ a{
   justify-content: space-between;
 }
 
+.d-none{
+  display: none;
+}
+
 @keyframes fadeIn {
   0%{
     opacity: 0;
