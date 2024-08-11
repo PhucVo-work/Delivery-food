@@ -56,27 +56,31 @@ const Navbar = ({ setShowLogin }) => {
           >
             Trang chủ
           </Link>
-          <a
-            href="#explore-menu"
-            onClick={() => setMenu("menu")}
-            className={menu === "menu" ? "active" : ""}
-          >
-            Thực đơn
-          </a>
-          <a
-            href="#app-download"
-            onClick={() => setMenu("mobile-app")}
-            className={menu === "mobile-app" ? "active" : ""}
-          >
-            Mobile-app
-          </a>
-          <a
-            href="#footer"
-            onClick={() => setMenu("contact-us")}
-            className={menu === "contact-us" ? "active" : ""}
-          >
-            Liên hệ
-          </a>
+          {["home", "menu", "mobile-app", "contact-us"].includes(menu) && (
+            <>
+              <a
+                href="#explore-menu"
+                onClick={() => handleNavigate("menu")}
+                className={menu === "menu" ? "active" : ""}
+              >
+                Thực đơn
+              </a>
+              <a
+                href="#app-download"
+                onClick={() => handleNavigate("mobile-app")}
+                className={menu === "mobile-app" ? "active" : ""}
+              >
+                Mobile-app
+              </a>
+              <a
+                href="#footer"
+                onClick={() => handleNavigate("contact-us")}
+                className={menu === "contact-us" ? "active" : ""}
+              >
+                Liên hệ
+              </a>
+            </>
+          )}
         </ul>
         <div className="navbar-right">
           <div className="header-qr">

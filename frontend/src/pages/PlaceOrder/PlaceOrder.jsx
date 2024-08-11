@@ -113,7 +113,7 @@ const PlaceOrder = () => {
   return (
     <form onSubmit={placeOrder} className="place-order">
       <div className="place-order-left">
-        <p className="title">Delivery Information</p>
+        <p className="title">Thông tin khách hàng</p>
         <div className="multi-fields">
           <input
             required
@@ -201,7 +201,7 @@ const PlaceOrder = () => {
       </div>
       <div className="place-order-right">
         <div className="cart-total">
-          <h2>Cart Totals</h2>
+          <h2>Tổng tiền</h2>
           <div>
             <div className="cart-total-details">
               <p>Tổng tiền món ăn</p>

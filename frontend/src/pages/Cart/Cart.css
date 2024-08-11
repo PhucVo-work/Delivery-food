@@ -21,6 +21,7 @@
 
 .cart-items-item img{
     width: 140px;
+    max-height: 108px;
     margin-left: 34px;
 }
 
