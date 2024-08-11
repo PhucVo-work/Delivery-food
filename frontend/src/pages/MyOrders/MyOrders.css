@@ -212,6 +212,26 @@
   margin-left: 0px;
 }
 
+.empty{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-img{ 
+  display: block;
+  width: 50%;
+}
+
+.empty-message{
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: -10px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
 @media (max-width: 900px) {
   .my-orders-order {
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr;

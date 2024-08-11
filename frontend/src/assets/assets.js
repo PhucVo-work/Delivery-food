@@ -72,6 +72,7 @@ import check_order from './check_order.png'
 import cooking from './cooking.png'
 import delivery from './delivery.png'
 import done_delivery from './done_delivery.png'
+import empty_bag from './empty_bag.png'
 
 export const assets = {
     logo,
@@ -105,7 +106,8 @@ export const assets = {
     check_order,
     done_delivery,
     cooking,
-    delivery
+    delivery,
+    empty_bag
 }
 
 export const menu_list = [
