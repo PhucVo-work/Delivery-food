@@ -41,15 +41,15 @@ const Orders = ({ url }) => {
           <div key={index} className="order-item">
             <div className="order-item-container">
               <img className="parcel-icon" src={assets.parcel_icon1} alt="" />
-              <p className="order-item-date">
-                {new Date(order.date).toLocaleDateString("vi-VN")}
-              </p>
-              <p className="order-item-hour">
-                {new Date(order.date).toLocaleTimeString("vi-VN", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}
-              </p>
+                <p className="order-item-date">
+                  {new Date(order.date).toLocaleDateString("vi-VN")}
+                </p>
+                <p className="order-item-hour">
+                  {new Date(order.date).toLocaleTimeString("vi-VN", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
             </div>
             <div className="order-item-info">
               <p className="order-item-food">
@@ -84,17 +84,15 @@ const Orders = ({ url }) => {
             <div>
               <p className="f-16">Tổng Tiền: {order.amount}.000₫</p>
               <div>
-                {order.payment ? (
-                  <div className="order-payment">
+                {order.payment 
+                ?<div className="order-payment">
                     <FaCheck className="icon-success" />
                     <p>Đã thanh toán</p>
-                  </div>
-                ) : (
-                  <div className="order-payment">
+                </div> 
+                :<div className="order-payment">
                     <FaExclamation className="icon-false" />
                     <p>Chưa Thanh Toán</p>
-                  </div>
-                )}
+                </div>}
               </div>
             </div>
 
@@ -102,7 +100,6 @@ const Orders = ({ url }) => {
               onChange={(event) => statusHandler(event, order._id)}
               value={order.status}
             >
-              <option value="Quán nhận đơn">Quán nhận đơn</option>
               <option value="Đang làm món ăn">Đang làm món ăn</option>
               <option value="Đang giao hàng">Đang giao hàng</option>
               <option value="Đã giao hàng">Đã giao hàng</option>

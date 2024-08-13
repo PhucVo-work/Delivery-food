@@ -137,6 +137,7 @@
   justify-content: s;
 }
 
+<<<<<<< HEAD
 .order-process-container {
   margin-top: 40px;
   display: flex;
@@ -232,34 +233,16 @@
 }
 
 
+=======
+>>>>>>> parent of 478de12 (complete ui myorder ver 2 and add check process for css)
 @media (max-width: 900px) {
   .my-orders-order {
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     row-gap: 5px;
     font-size: 12px;
   }
 
   .my-orders-order button {
     font-size: 10px;
-  }
-
-  .space-between p {
-    margin-bottom: 40px;
-  }
-
-  .order-process-img {
-    display: none;
-  }
-
-  .order-process-img-active {
-    display: none;
-  }
-
-  .line-active {
-    display: none;
-  }
-
-  .order-process-line {
-    display: none;
   }
 }
