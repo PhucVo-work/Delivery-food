@@ -100,6 +100,7 @@ const Orders = ({ url }) => {
               onChange={(event) => statusHandler(event, order._id)}
               value={order.status}
             >
+              <option value="Quán nhận đơn">Quán nhận đơn</option>
               <option value="Đang làm món ăn">Đang làm món ăn</option>
               <option value="Đang giao hàng">Đang giao hàng</option>
               <option value="Đã giao hàng">Đã giao hàng</option>

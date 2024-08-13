@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const PlaceOrder = () => {
-  const { getTotalCartAmount, token, food_list, cartItems, url } = useContext(StoreContext);
+  const { getTotalCartAmount, token, food_list, cartItems, url, setCartItems, setMenu } = useContext(StoreContext);
   const navigate = useNavigate();
 
   const [data, setData] = useState({
@@ -82,6 +82,8 @@ const PlaceOrder = () => {
           text: 'Thanh toán khi nhận hàng',
         });
         navigate("/myorders");
+        setMenu("")
+        setCartItems({})
       } else {
         Swal.fire({
           icon: 'warning',
