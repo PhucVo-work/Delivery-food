@@ -68,11 +68,14 @@ import be from './be.png'
 import gojeck from './gojeck.png'
 import grab from './grab.png'
 import parcel_icon1 from './parcel_icon1.png'
+<<<<<<< HEAD
 import empty_bag from './empty_bag.png'
 import check_order from './check_order.png'
 import cooking from './cooking.png'
 import delivery from './delivery.png'
 import done_delivery from './done_delivery.png'
+=======
+>>>>>>> parent of 478de12 (complete ui myorder ver 2 and add check process for css)
 
 export const assets = {
     logo,
@@ -102,12 +105,16 @@ export const assets = {
     baemin,
     be,
     gojeck,
+<<<<<<< HEAD
     grab,
     check_order,
     done_delivery,
     cooking,
     delivery,
     empty_bag,
+=======
+    grab
+>>>>>>> parent of 478de12 (complete ui myorder ver 2 and add check process for css)
 }
 
 export const menu_list = [
