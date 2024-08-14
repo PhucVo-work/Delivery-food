@@ -46,7 +46,7 @@ const Navbar = ({ setShowLogin }) => {
     <div className={`container ${hasShadow ? "shadow" : ""}`}>
       <div className="navbar">
         <Link to="/" onClick={() => handleNavigate("home")}>
-          <img src={assets.logo2} alt="" className="logo" />
+          <img src={assets.logo} alt="" className="logo" />
         </Link>
         <ul className="navbar-menu">
           <Link

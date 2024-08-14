@@ -1,9 +1,5 @@
 import logo from './logo.png'
-import logo2 from './logo2.png'
 import header_img from './header_img.png'
-import search_icon from './search_icon.png'
-import qr_icon from './qr_icon.svg'
-import basket_icon from './basket_icon.svg'
 import qrcode from './qrcode.svg'
 import menu_1 from './menu_1.png'
 import menu_2 from './menu_2.png'
@@ -55,32 +51,22 @@ import play_store from './play_store.png'
 import linkedin_icon from './linkedin_icon.png'
 import facebook_icon from './facebook_icon.png'
 import twitter_icon from './twitter_icon.png'
-import cross_icon from './cross_icon.svg'
-import selector_icon from './selector_icon.png'
 import rating_starts from './rating_starts.png'
-import profile_icon from './profile_icon.png'
-import logout_icon from './logout_icon.png'
-import parcel_icon from './parcel_icon.png'
-import phone_icon from './phone_icon.svg'
-import envelope_icon from './envelope_icon.svg'
 import baemin from './baemin.png'
 import be from './be.png'
 import gojeck from './gojeck.png'
 import grab from './grab.png'
-import parcel_icon1 from './parcel_icon1.png'
+import parcel_icon from './parcel_icon.png'
 import empty_bag from './empty_bag.png'
 import check_order from './check_order.png'
 import cooking from './cooking.png'
 import delivery from './delivery.png'
 import done_delivery from './done_delivery.png'
+import cross_icon from './cross_icon.svg'
 
 export const assets = {
     logo,
-    logo2,
-    basket_icon,
     header_img,
-    search_icon,
-    qr_icon,
     qrcode,
     rating_starts,
     add_icon_green,
@@ -91,14 +77,7 @@ export const assets = {
     linkedin_icon,
     facebook_icon,
     twitter_icon,
-    cross_icon,
-    selector_icon,
-    profile_icon,
-    logout_icon,
     parcel_icon,
-    parcel_icon1,
-    phone_icon,
-    envelope_icon,
     baemin,
     be,
     gojeck,
@@ -108,6 +87,7 @@ export const assets = {
     cooking,
     delivery,
     empty_bag,
+    cross_icon
 }
 
 export const menu_list = [

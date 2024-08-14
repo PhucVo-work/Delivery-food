@@ -31,6 +31,11 @@
     cursor: pointer;
 }
 
+.footer-content-left img {
+    width: 90px;
+    height: 68px;
+}
+
 .footer-content-left p{
     margin-top: 8px;
     line-height: 1.7;

@@ -89,7 +89,7 @@ const MyOrders = () => {
             return (
               <div key={order._id} className="my-orders-order">
                 <div className="order-item-container">
-                  <img src={assets.parcel_icon1} alt="" />
+                  <img src={assets.parcel_icon} alt="" />
                   <p className="order-item-date">
                     {new Date(order.date).toLocaleDateString("vi-VN")}
                   </p>

@@ -40,7 +40,7 @@ const Orders = ({ url }) => {
         {orders.map((order, index) => (
           <div key={index} className="order-item">
             <div className="order-item-container">
-              <img className="parcel-icon" src={assets.parcel_icon1} alt="" />
+              <img className="parcel-icon" src={assets.parcel_icon} alt="" />
                 <p className="order-item-date">
                   {new Date(order.date).toLocaleDateString("vi-VN")}
                 </p>
