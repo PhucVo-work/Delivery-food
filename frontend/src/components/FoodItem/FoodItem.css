@@ -8,6 +8,10 @@
     min-height: 394px;
 }
 
+.food-item:hover {
+    transform: scale(1.02);
+}
+
 .food-item-image{
     width: 100%;
     height: 219px;
