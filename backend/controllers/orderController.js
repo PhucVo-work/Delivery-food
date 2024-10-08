@@ -6,7 +6,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // hiển thị những đơn đặt hàng của người dùng ở frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = "http://localhost:5173";
+  const frontend_url = "https://delivery-food-frontend-fl7n.onrender.com";
 
   try {
     const newOrder = new orderModel({
